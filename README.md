@@ -2,7 +2,7 @@
 ### link : https://koteswar-e.github.io/koteswar.github.io/
 
 ## About Me
-Passionate developer with a strong background in computer science.
+Passionate Data Scientist with a strong background in AI, NLP, LLM's, Data Analysis and cloud computing.
 
 ## Skills
 - Python, R, NLP, LLM's, AI, ML
