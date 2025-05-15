@@ -12,4 +12,5 @@ Passionate Data Engineer with a strong background in AI, NLP, LLM's, Data Analys
 ## Contact info
 - **Email** : koteswar2k@gmail.com
 - **LinkedIn** : https://www.linkedin.com/in/koteswar-enamadni/
-- **GitHub** :https://github.com/koteswar-e
+- **GitHub** : https://github.com/koteswar-e
+- **Credly** : https://www.credly.com/users/koteswar-e
