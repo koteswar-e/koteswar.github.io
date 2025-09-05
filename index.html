@@ -1,176 +1,783 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Resume - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Koteswar Enamadni</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Professional Summary</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#certifications">certifications</a></li>
-                </ul>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koteswar Enamadni | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#1E3A5F',
+                            dark: '#4B586F',
+                            light: '#F0F4F8'
+                        },
+                        animation: {
+                            'fade-in': 'fadeIn 1s ease-in-out',
+                            'slide-up': 'slideUp 0.8s ease-out',
+                            'float': 'float 3s ease-in-out infinite'
+                        },
+                        keyframes: {
+                            fadeIn: {
+                                '0%': { opacity: '0' },
+                                '100%': { opacity: '1' }
+                            },
+                            slideUp: {
+                                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                                '100%': { transform: 'translateY(0)', opacity: '1' }
+                            },
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-10px)' }
+                            }
+                        }
+                    }
+                }
+            };
+        });
+    </script>
+    <style>
+        /* Custom cursor */
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(59, 130, 246, 0.5);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+        
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+            z-index: 9998;
+        }
+        
+        .cursor.active {
+            transform: translate(-50%, -50%) scale(1.5);
+            background-color: rgba(59, 130, 246, 0.8);
+        }
+        
+        .cursor-follower.active {
+            transform: translate(-50%, -50%) scale(0.5);
+            background-color: rgba(59, 130, 246, 0.2);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 10px;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1E293B;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #60A5FA;
+        }
+
+        /* Custom underline animation */
+        .underline-animation {
+            position: relative;
+        }
+        .underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3B82F6;
+            transition: width 0.3s ease;
+        }
+        .underline-animation:hover::after {
+            width: 100%;
+        }
+        .dark .underline-animation::after {
+            background-color: #60A5FA;
+        }
+
+        /* Project card hover effect */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .dark .project-card:hover {
+            box-shadow: 0 10px 25px rgba(30, 58, 95, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-light text-gray-800 dark:bg-dark dark:text-gray-200 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold text-primary dark:text-blue-400">KOTESWAR ENAMADNI</a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="underline-animation">Home</a>
+                    <a href="#about" class="underline-animation">About</a>
+                    <a href="#experience" class="underline-animation">Experience</a>
+                    <a href="#projects" class="underline-animation">Projects</a>
+                    <a href="#skills" class="underline-animation">Skills</a>
+                    <a href="#contact" class="underline-animation">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        <span class="text-primary">KOTESWAR</span>
-                        ENAMADNI
-                    </h1>
-                    <div class="subheading mb-5">
-                        New York · (475) 375-7286 ·
-                        <a href="mailto:koteswar2k@gmail.com">koteswar2k@gmail.com</a>  ·  <a href="https://drive.google.com/file/d/1LGiTinL5hKvXayhX9raXNOW2-nYtWARj/view?usp=sharing" class="text">
-                            <i class="fas fa-file-download"></i> RESUME
-                          </a>
-                        </a>
-                    </div>
-                    <p class="lead" style="margin-bottom: 10px;">Data Scientist with a strong background in predictive modeling, statistical analysis, and data visualization. Expert in Python, R, MySQL, PyTorch, and Matplotlib, with advanced skills in prompt engineering, database management, and visualization tools like MS Excel and Power BI. I bring a robust foundation in AI, machine learning, and natural language processing.</p>
-                    <p class="lead" style="margin-bottom: 10px;">I deliver actionable insights and drive business success through innovative data solutions, improving model accuracy and enhancing data quality. My commitment to data integrity and security ensures reliable, scalable outcomes. Invest in my expertise to leverage data for a competitive edge and achieve your strategic goals.</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/in/koteswar-enamadni/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="https://github.com/koteswar-e"><i class="fab fa-github"></i></a>
-                        <!-- <a href="https://drive.google.com/file/d/1_MQmXVVNquqtImQjPoUhtBj6lk5iheMk/view?usp=sharing" class="text"><i class="fas fa-file-download"></i> RESUME</a> -->
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Data Science Intern</h3>
-                            <div class="subheading mb-3">Corizo</div>
-                            <p>Improved prediction model accuracy by 15% and enhanced flight pricing accuracy by 12% through collaboration with product managers and engineers, ensuring higher data quality and reliability. Conducted trend analysis on large datasets using Python, R, and SQL to extract actionable insights, identifying key factors that informed strategic pricing adjustments.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">March 2023 - May 2023</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Researcher</h3>
-                            <div class="subheading mb-3">Center for Human Security Studies</div>
-                            <p>Demonstrated expertise in cryptography and data security by conducting comprehensive research on the RSA algorithm, authoring an exploratory essay for a CHSS article, and delivering weekly presentations using MS Office to effectively communicate complex findings to stakeholders.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">November 2020 - December 2020</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Java Intern</h3>
-                            <div class="subheading mb-3">AP Skill Development</div>
-                            <p>Enhanced efficiency in resolving technical issues by 20% by implementing optimized data structures and consulting with cross-departmental teams, reducing project turnaround times in software design and maintenance.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">July 2020 - August 2020</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Education-->
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Tagliatela College Of Engineering | University of New Haven</h3>
-                            <div class="subheading mb-3">Masters in Data Science</div>
-                            <div> Health Analytics | Leadership and Entrepreneurism | Artificial Intelligence | Machine Learning | Deep Learning | Natural Language Processing | Distributed and Scalable Data Engineering | Big Data | R | MySQL</div>
-                            <p>GPA: 3.60</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2023 - May 2025</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Master Of Computer Applications</h3>
-                            <div>Cyber Security | Web Development | Data Base Management Systems | Cryptography and Network Security | Python | Programming Fundamentals</div>
-                            <p>GPA: 3.50</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">January 2021 - August 2022</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Skills-->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-4">Programming Languages & Tools</div>
-                    <div class="subheading mb-3"> 
-                        <b>Python</b> | SQL | AWS | Excel Predictive Modeling | GIT | <b>Statistical Analysis</b> | Data Security | <b>Machine Learning</b> | <b>Deep Learning</b> | <b>Natural Language Processing</b> | Data Visualization | Data Integrity| Database Management Systems |  <b>R</b> | Distributed and Scalable Data Engineering | MS Excel | Power BI | Big Data | Data Pipelines
-                    </div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                    </ul>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Interests-->
-            <section class="resume-section" id="projects">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">PROJECT</h2>
-                    <div class="subheading mb-3">Bias Detection and Mitigation in Pre-trained Language Models </div>
-                    <p>Developed a bias detection and mitigation framework using PyTorch and Hugging Face Transformers, analyzing over 17,000 instances from StereoSet and 1,508 sentence pairs from CrowS-Pairs to achieve fairness in gender and profession with minimal accuracy loss. Led a team to design an adversarial training framework for debiasing language models, addressing societal biases in recruitment and healthcare, and deployed a scalable debiasing pipeline on Google Colab.</p>
-                    <div class="subheading mb-3">Mobile Price Prediction System using Machine Learning Algorithms  </div>
-                    <p>To enhance mobile phone price forecasting, I developed a predictive model using Python and Scikit-learn, analyzing 1,000 instances with 19 features to achieve 88% accuracy. By conducting data analysis with Python and SQL, I identified key pricing factors, improving prediction accuracy by 12%. I then deployed a Flask web application to provide real-time price predictions, supporting over 500 daily queries and reducing user decision time by 30%, demonstrating my ability to leverage data science and web development skills to deliver practical, user-friendly solutions.</p>
-                    <div class="subheading mb-3">CD/DVD Management System </div>
-                    <p>To streamline media collection management, I developed a CD/DVD library system using SQL, RDBMS, and Java. By implementing core RDBMS concepts like DDL and DML operations, I reduced database response time by 30%. I designed a structured database with primary and foreign key relationships to ensure data integrity and enabled CRUD operations via Java and JDBC. The system features an interactive UI with search, categorization, and tracking functionalities, along with loan management capabilities, including overdue item reports and member reminders. This project highlights my expertise in database management and software development to deliver efficient, user-centric solutions.</p>
-                    <div class="subheading mb-3">Cyberbullying Detection System using Naive Bayes Algorithm	 </div>
-                    <p>Developed a high-accuracy (90%) cyberbullying detection system by implementing a Naive Bayes classifier with N-grams to identify abusive language patterns, contributing to safer social media interactions.</p>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Certifications and Publications-->
-            <section class="resume-section" id="certifications">
-                <div class="resume-section-content">
-                <h2 class="mb-5">Certifications and Publications</h2>
-                <ul class="fa-ul mb-0">
-                    <li>
-                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                        Data Science Foundations - Level 2 (V2)
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                        MTA: Database Fundamentals - Certified 2022
-                    </li>
-                </ul>
-                <ul class="fa-ul mb-0">
-                    <li>
-                        <a href="https://srivasaviengg.ac.in/uploads/r&d_uploads/Proceedings_of_AICTE-2023_Book.pdf#page=11" target="_blank">
-                            Customer Segmentation Using Machine Learning Algorithm - NCDECT - 2023
-                        </a>
-                    </li>
-                </ul>
-                </div>
-            </section>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 pb-2">
+                <a href="#home" class="block py-2 px-4 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+                <a href="#about" class="block py-2 px-4 rounded hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+                <a href="#experience" class="block py-2 px-4 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Experience</a>
+                <a href="#projects" class="block py-2 px-4 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Projects</a>
+                <a href="#skills" class="block py-2 px-4 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Skills</a>
+                <a href="#contact" class="block py-2 px-4 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+            </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-12 md:py-24 max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-3/5 mb-12 md:mb-0 animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center md:text-left whitespace-nowrap">
+                        Hi, I'm <span class="text-primary dark:text-blue-400">Koteswar Enamadni</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-600 dark:text-gray-300 text-center md:text-left">
+                        <span class="inline-block whitespace-nowrap">Data & AI Engineer | Big Data Developer</span>
+                    </h2>
+                    <p class="text-lg mb-8 text-gray-600 dark:text-gray-300 text-center md:text-left">
+                        I am a Data and AI Engineer with over 4 years of hands-on experience building scalable data pipelines, AI platforms, and cloud-native analytics solutions.
+                    </p>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#projects" class="bg-primary hover:bg-[#4B586F] text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border-2 border-primary text-primary dark:text-blue-400 dark:border-blue-400 px-6 py-3 rounded-lg font-medium hover:bg-primary/10 transition-colors">
+                            Contact Me
+                        </a>
+                        <a href="https://www.linkedin.com/in/koteswar-enamadni/" target="_blank" class="border-2 border-primary text-primary dark:text-blue-400 dark:border-blue-400 px-3 py-3 rounded-full font-medium hover:bg-primary/10 transition-colors">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="https://github.com/koteswar-e" target="_blank" class="border-2 border-primary text-primary dark:text-blue-400 dark:border-blue-400 px-3 py-3 rounded-full font-medium hover:bg-primary/10 transition-colors">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-2/5 flex justify-center animate-float">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary to-[#4B586F] overflow-hidden shadow-xl">
+                        <img src="https://placehold.co/800x800/60A5FA/1E3A5F?text=Koteswar+E." 
+                             alt="Profile" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-primary/10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-slide-up">
+                About <span class="text-primary dark:text-blue-400">Me</span>
+            </h2>
+            
+            <div class="flex flex-col gap-12 max-w-4xl mx-auto">
+                <div class="animate-slide-up text-left">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Who am I?</h3>
+                    <p id="about-summary" class="text-lg mb-6 text-gray-600 dark:text-gray-300">
+                        As a Data Engineer and AI Engineer, I have over 4 years of hands-on experience specializing in building scalable data pipelines, AI platforms, and cloud-native analytics solutions. My work spans the healthcare, aviation, and telecom industries. I'm highly proficient in cloud platforms like AWS and Azure, with a strong focus on ETL design, data lake architecture, and real-time processing using technologies such as Spark, Kinesis, and Delta Lake. I've designed and optimized data platforms that handle over 5 million records weekly, supporting clinical insights, flight operations, and financial reporting.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-primary dark:text-blue-400 mb-2">
+                                <i class="fas fa-graduation-cap mr-2"></i> Education
+                            </h4>
+                            <p class="text-gray-800 dark:text-gray-300">
+                                Master of Science in Data Science<br>
+                                University of New Haven, 2023-2025
+                            </p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-primary dark:text-blue-400 mb-2">
+                                <i class="fas fa-briefcase mr-2"></i> Experience
+                            </h4>
+                            <p class="text-gray-800 dark:text-gray-300">
+                                Data Engineer<br>
+                                Optum, 2024-Present
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg text-gray-600 dark:text-gray-300">
+                        I am dedicated to implementing robust data governance, RBAC, encryption, and compliance measures. I have developed and deployed end-to-end ML workflows using Python, MLflow, TensorFlow, and SageMaker, significantly improving model deployment speed and traceability. My expertise also includes MLOps and automating infrastructure with tools like Terraform and GitHub Actions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-slide-up">
+                Professional <span class="text-primary dark:text-blue-400">Experience</span>
+            </h2>
+            
+            <div class="flex flex-col space-y-6">
+                <!-- Experience 1: Optum -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg animate-slide-up">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Value-Based Care Analytics Platform</h3>
+                        <h4 class="text-md font-semibold text-gray-800 dark:text-gray-300">Data Engineer, Optum (08/2024 – Present)</h4>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 my-4 text-sm space-y-2">
+                            <li>Developed and managed a healthcare analytics platform using **AWS** and **Snowflake** to process over 5 million records weekly.</li>
+                            <li>Engineered automated data quality validation layers with **Great Expectations** and **SQL** rules, reducing inaccuracies in regulatory reports by 30%.</li>
+                            <li>Designed **PySpark** batch and streaming jobs on **AWS EMR** and **AWS Glue** for near real-time HEDIS quality reporting.</li>
+                            <li>Migrated legacy analytics workloads from on-premise SQL Server to **Snowflake** and **AWS Redshift**, cutting infrastructure costs by 25%.</li>
+                            <li>Implemented **Infrastructure-as-Code** using **Terraform** and **AWS CodePipeline** for repeatable and secure environment provisioning.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS S3</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS Glue</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS Redshift</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS EMR</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS Lambda</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-200">Snowflake</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">PySpark</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">SQL</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full dark:bg-yellow-900 dark:text-yellow-200">Terraform</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full dark:bg-pink-900 dark:text-pink-200">Great Expectations</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full dark:bg-purple-900 dark:text-purple-200">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 2: TCS -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg animate-slide-up">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Azure & Databricks Cloud Data Lake</h3>
+                        <h4 class="text-md font-semibold text-gray-800 dark:text-gray-300">Data Engineer, TCS (01/2022 – 07/2023)</h4>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 my-4 text-sm space-y-2">
+                            <li>Developed **Azure Data Factory** pipelines to ingest raw data into **Azure Data Lake Storage Gen2** and process it with scalable **PySpark** jobs in **Azure Databricks**.</li>
+                            <li>Implemented **Delta Lake** for ACID transactions and incremental data loads, reducing refresh times and improving performance by 50%.</li>
+                            <li>Applied **Azure Key Vault** and **role-based access** to secure sensitive customer data.</li>
+                            <li>Deployed infrastructure with **Terraform** and managed **CI/CD** with **Azure DevOps** for repeatable environment provisioning.</li>
+                            <li>Created **40+ Power BI dashboards** with live connections to **Azure Synapse** for operational and financial KPI monitoring.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Azure Data Factory</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Azure Databricks</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Azure Synapse</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">ADLS Gen2</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full dark:bg-purple-900 dark:text-purple-200">Delta Lake</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">PySpark</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full dark:bg-yellow-900 dark:text-yellow-200">Terraform</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full dark:bg-pink-900 dark:text-pink-200">Azure DevOps</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full dark:bg-purple-900 dark:text-purple-200">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 3: Corizo -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg animate-slide-up">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Data Pipelines for Analytics & AI</h3>
+                        <h4 class="text-md font-semibold text-gray-800 dark:text-gray-300">Data Engineer, Corizo (06/2020 – 12/2022)</h4>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 my-4 text-sm space-y-2">
+                            <li>Built and maintained end-to-end data ingestion pipelines using **Apache Airflow** and **Python** for analytics and ML workflows.</li>
+                            <li>Modeled analytical datasets in **Snowflake** to support AI-driven recommendation engines and customer analytics.</li>
+                            <li>Implemented **CI/CD** automation using **GitHub Actions** and **Docker** for **PySpark** job deployments.</li>
+                            <li>Leveraged **AWS Glue** for metadata management and designed partitioning strategies to reduce **S3** storage costs by 30%.</li>
+                            <li>Collaborated with BI teams to deliver analytics-ready datasets for dashboards in **Tableau** and **Power BI**.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full dark:bg-red-900 dark:text-red-200">Apache Airflow</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-200">Snowflake</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">PySpark</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS S3</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full dark:bg-yellow-900 dark:text-yellow-200">Docker</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full dark:bg-pink-900 dark:text-pink-200">GitHub Actions</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full dark:bg-purple-900 dark:text-purple-200">Power BI</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full dark:bg-teal-900 dark:text-teal-200">Tableau</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-slide-up">
+                My <span class="text-primary dark:text-blue-400">Projects</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dummy Project 1 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg animate-slide-up">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=Data+Dashboard" 
+                             alt="Dummy Project 1" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Real-Time Data Dashboard</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A dynamic dashboard for visualizing streaming data, built with modern JavaScript libraries for interactive reporting.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Python</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">Flask</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full dark:bg-yellow-900 dark:text-yellow-200">D3.js</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/koteswar-e" class="text-gray-600 dark:text-gray-300 hover:underline">
+                                <i class="fab fa-github mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dummy Project 2 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=ETL+Pipeline" 
+                             alt="Dummy Project 2" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Automated ETL Framework</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A scalable, reusable framework for building and scheduling ETL pipelines from various data sources into a data warehouse.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">PySpark</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full dark:bg-purple-900 dark:text-purple-200">Airflow</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full dark:bg-pink-900 dark:text-pink-200">SQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/koteswar-e" class="text-gray-600 dark:text-gray-300 hover:underline">
+                                <i class="fab fa-github mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dummy Project 3 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=AI+Chatbot" 
+                             alt="Dummy Project 3" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">NLP-Powered Chatbot</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            An AI-driven chatbot for customer service, using natural language processing to understand and respond to user queries.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Python</span>
+                            <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full dark:bg-red-900 dark:text-red-200">scikit-learn</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">BERT</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/koteswar-e" class="text-gray-600 dark:text-gray-300 hover:underline">
+                                <i class="fab fa-github mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 animate-slide-up" style="animation-delay: 0.6s;">
+                <a href="https://github.com/koteswar-e" target="_blank" class="inline-flex items-center px-6 py-3 border border-primary text-primary dark:text-blue-400 dark:border-blue-400 rounded-lg hover:bg-primary/10 transition-colors">
+                    <i class="fab fa-github mr-2"></i> View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-[#F0F4F8] dark:bg-gray-950">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-slide-up text-[#1E3A5F] dark:text-white">
+                My <span class="text-[#4B586F] dark:text-white">Skills</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Programming Languages -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg animate-slide-up">
+                    <h3 class="text-xl font-bold mb-6 text-[#1E3A5F] dark:text-white border-b-2 border-[#B0BEC5] dark:border-gray-700 pb-2">
+                        <i class="fas fa-code mr-2"></i> Programming Languages
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Python</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">SQL</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Java</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Scala</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">R</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">JavaScript</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">PL/SQL</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Shell Scripting</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg animate-slide-up" style="animation-delay: 0.2s;">
+                    <h3 class="text-xl font-bold mb-6 text-[#1E3A5F] dark:text-white border-b-2 border-[#B0BEC5] dark:border-gray-700 pb-2">
+                        <i class="fas fa-cloud mr-2"></i> Cloud & DevOps
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">AWS</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Azure</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">GCP</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Terraform</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Docker</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Kubernetes</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">GitHub Actions</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">GitLab CI/CD</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Azure DevOps</span>
+                    </div>
+                </div>
+
+                <!-- Database & Data Tools -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg animate-slide-up" style="animation-delay: 0.4s;">
+                    <h3 class="text-xl font-bold mb-6 text-[#1E3A5F] dark:text-white border-b-2 border-[#B0BEC5] dark:border-gray-700 pb-2">
+                        <i class="fas fa-database mr-2"></i> Database & Data Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Snowflake</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Amazon Redshift</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Apache Spark</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Apache Airflow</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Power BI</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Tableau</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Databricks</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Delta Lake</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Confluence</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Great Expectations</span>
+                    </div>
+                </div>
+
+                <!-- AI/ML & MLOps -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg animate-slide-up" style="animation-delay: 0.6s;">
+                    <h3 class="text-xl font-bold mb-6 text-[#1E3A5F] dark:text-white border-b-2 border-[#B0BEC5] dark:border-gray-700 pb-2">
+                        <i class="fas fa-brain mr-2"></i> AI/ML & MLOps
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">TensorFlow</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">PyTorch</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">MLflow</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">AWS SageMaker</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Flask</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">BERT</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Hugging Face Transformers</span>
+                    </div>
+                </div>
+
+                <!-- Agile & Methodologies -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg animate-slide-up" style="animation-delay: 0.8s;">
+                    <h3 class="text-xl font-bold mb-6 text-[#1E3A5F] dark:text-white border-b-2 border-[#B0BEC5] dark:border-gray-700 pb-2">
+                        <i class="fas fa-project-diagram mr-2"></i> Agile & Methodologies
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Agile (Scrum)</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">CI/CD</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">DevOps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-slide-up">
+                Get In <span class="text-primary dark:text-blue-400">Touch</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2 animate-slide-up">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">
+                        Feel free to reach out if you're looking for a data engineer, have a question, or just want to connect.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 dark:bg-[#4B586F]/10 p-3 rounded-full mr-4 text-primary dark:text-[#4B586F]">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <a href="mailto:ekoteswar.2k@gmail.com" class="text-gray-600 dark:text-gray-300 hover:underline">ekoteswar.2k@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 dark:bg-blue-400/10 p-3 rounded-full mr-4 text-primary dark:text-blue-400">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <a href="tel:+14753757286" class="text-gray-600 dark:text-gray-300 hover:underline">+1 (475) 375-7286</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 dark:bg-blue-400/10 p-3 rounded-full mr-4 text-primary dark:text-blue-400">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300">New Haven, CT</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/koteswar-enamadni/" target="_blank" class="bg-gray-100 dark:bg-gray-700 p-3 rounded-full text-gray-800 dark:text-gray-200 hover:bg-primary/10 dark:hover:bg-[#4B586F]/10 transition-colors">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://github.com/koteswar-e" target="_blank" class="bg-gray-100 dark:bg-gray-700 p-3 rounded-full text-gray-800 dark:text-gray-200 hover:bg-primary/10 dark:hover:bg-[#4B586F]/10 transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 animate-slide-up" style="animation-delay: 0.2s;">
+                    <form id="contact-form" action="https://formspree.io/f/xovnpbqr" method="POST" class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="_replyto" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="_subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white"></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <!-- This div is for the reCAPTCHA, which is handled by Formspree automatically -->
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#home" class="text-2xl font-bold text-gray-200 dark:text-white">KOTESWAR ENAMADNI</a>
+                    <p class="mt-2 text-gray-400">Building digital experiences that matter.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0 hidden">
+                    <div>
+                        <h4 class="font-semibold mb-3">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                            <li><a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a></li>
+                            <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+                            <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-3">Connect</h4>
+                        <ul class="space-y-2">
+                            <li><a href="https://github.com/koteswar-e" target="_blank" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/koteswar-enamadni/" target="_blank" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Koteswar Enamadni. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+        
+        // Add active state on clickable elements
+        document.querySelectorAll('a, button, input, .project-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('active');
+                cursorFollower.classList.add('active');
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('active');
+                cursor.classList.remove('active');
+            });
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or use preferred color scheme
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-slide-up, .animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.animate-slide-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        document.querySelectorAll('.animate-fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transition = 'opacity 1s ease';
+        });
+        
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
 </html>
