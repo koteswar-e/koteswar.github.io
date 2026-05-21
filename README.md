@@ -11,7 +11,7 @@ Passionate Data Engineer with a strong background in SQL, AWS, Data Analysis and
 - Data Science: Pandas, Matplotlib
 
 ## Contact info
-- **Email** : ekoteswar.2k@gmail.com
+- **Email** : koteswar2k@gmail.com
 - **LinkedIn** : https://www.linkedin.com/in/koteswar-e/
 - **GitHub** : https://github.com/koteswar-e
 - **Credly** : https://www.credly.com/users/koteswar-e
