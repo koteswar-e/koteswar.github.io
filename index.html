@@ -55,7 +55,7 @@
             z-index: 9999;
             mix-blend-mode: difference;
         }
-        
+
         .cursor-follower {
             position: fixed;
             width: 40px;
@@ -67,12 +67,12 @@
             transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
             z-index: 9998;
         }
-        
+
         .cursor.active {
             transform: translate(-50%, -50%) scale(1.5);
             background-color: rgba(59, 130, 246, 0.8);
         }
-        
+
         .cursor-follower.active {
             transform: translate(-50%, -50%) scale(0.5);
             background-color: rgba(59, 130, 246, 0.2);
@@ -136,7 +136,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="#home" class="text-2xl font-bold text-primary dark:text-blue-400">KOTESWAR ENAMADNI</a>
-                
+
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="underline-animation">Home</a>
                     <a href="#about" class="underline-animation">About</a>
@@ -145,19 +145,19 @@
                     <a href="#skills" class="underline-animation">Skills</a>
                     <a href="#contact" class="underline-animation">Contact</a>
                 </div>
-                
+
                 <div class="flex items-center space-x-4">
                     <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:block"></i>
                     </button>
-                    
+
                     <button id="mobile-menu-button" class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </div>
-            
+
             <!-- Mobile menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 pb-2">
                 <a href="#home" class="block py-2 px-4 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
@@ -179,10 +179,10 @@
                         Hi, I'm <span class="text-primary dark:text-blue-400">Koteswar Enamadni</span>
                     </h1>
                     <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-600 dark:text-gray-300 text-center md:text-left">
-                        <span class="inline-block whitespace-nowrap">Data & AI Engineer | Big Data Developer</span>
+                        <span class="inline-block whitespace-nowrap">Data Engineer</span>
                     </h2>
                     <p class="text-lg mb-8 text-gray-600 dark:text-gray-300 text-center md:text-left">
-                        I am a Data and AI Engineer with over 5 years of hands-on experience building scalable data pipelines, AI platforms, and cloud-native analytics solutions.
+                        Results-driven Data Engineer with over a year of experience architecting and optimizing event-driven ETL pipelines and serverless cloud solutions.
                     </p>
                     <div class="flex space-x-4 justify-center md:justify-start">
                         <a href="#projects" class="bg-primary hover:bg-[#4B586F] text-white px-6 py-3 rounded-lg font-medium transition-colors">
@@ -201,8 +201,8 @@
                 </div>
                 <div class="md:w-2/5 flex justify-center animate-float">
                     <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary to-[#4B586F] overflow-hidden shadow-xl">
-                        <img src="https://raw.githubusercontent.com/koteswar-e/koteswar.github.io/main/assets/img/Koti_profile.jpg" 
-                             alt="Profile" 
+                        <img src="https://raw.githubusercontent.com/koteswar-e/koteswar.github.io/main/assets/img/Koti_profile.jpg"
+                             alt="Profile"
                              class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-primary/10"></div>
                     </div>
@@ -217,48 +217,34 @@
             <h2 class="text-3xl font-bold text-center mb-16 animate-slide-up">
                 About <span class="text-primary dark:text-blue-400">Me</span>
             </h2>
-            
+
             <div class="flex flex-col gap-12 max-w-4xl mx-auto">
                 <div class="animate-slide-up text-left">
                     <h3 class="text-2xl font-semibold mb-4 text-center">Who am I?</h3>
                     <p id="about-summary" class="text-lg mb-6 text-gray-600 dark:text-gray-300">
-                        As a <strong>Data Engineer</strong> and <strong>AI Engineer</strong>, 
-                        I have over 5 years of hands-on experience specializing in building scalable data pipelines, 
-                        AI platforms, and cloud-native analytics solutions. My work spans the healthcare, aviation, and telecom industries. 
-                        I'm highly proficient in cloud platforms like <b>AWS</b> and <b>Azure</b>, with a strong focus on <b>ETL design</b>, 
-                        <b>data lake architecture</b>, and <b>real-time processing</b> using technologies such as <b>Spark</b>, 
-                        <b>Kinesis</b>, and <b>Delta Lake</b>. 
-                        I've designed and optimized data platforms that handle over 5 million records weekly, supporting clinical insights, 
-                        flight operations, and financial reporting.
+                        Proficient in leveraging Python, SQL, and the AWS ecosystem to transform raw data into scalable analytics and reporting models. Demonstrated track record of migrating legacy systems, enforcing rigorous data quality frameworks, and applying foundational machine learning techniques to drive business value. Adept at building secure, cost-effective, and highly available data architectures.
                     </p>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                         <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
                             <h4 class="font-semibold text-primary dark:text-blue-400 mb-2">
                                 <i class="fas fa-graduation-cap mr-2"></i> Education
                             </h4>
                             <p class="text-gray-800 dark:text-gray-300">
-                                Master of Science in Data Science<br>
-                                University of New Haven, 2023-2025
+                                Master of Science in Data Science (STEM)<br>
+                                University of New Haven, Aug 2023 - May 2025
                             </p>
                         </div>
                         <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
                             <h4 class="font-semibold text-primary dark:text-blue-400 mb-2">
-                                <i class="fas fa-briefcase mr-2"></i> Experience
+                                <i class="fas fa-graduation-cap mr-2"></i> Education
                             </h4>
                             <p class="text-gray-800 dark:text-gray-300">
-                                Data Engineer<br>
-                                Optum, 2024-Present
+                                Master of Computer Applications (MCA)<br>
+                                Andhra University, Jan 2021 - Aug 2022
                             </p>
                         </div>
                     </div>
-                    
-                    <p class="text-lg text-gray-600 dark:text-gray-300">
-                        I am dedicated to implementing robust data governance, RBAC, encryption, and compliance measures.
-                        I have developed and deployed end-to-end ML workflows using Python, MLflow, TensorFlow, and SageMaker, 
-                        significantly improving model deployment speed and traceability. 
-                        My expertise also includes MLOps and automating infrastructure with tools like Terraform and GitHub Actions.
-                    </p>
                 </div>
             </div>
         </div>
@@ -270,83 +256,64 @@
             <h2 class="text-3xl font-bold text-center mb-16 animate-slide-up">
                 Professional <span class="text-primary dark:text-blue-400">Experience</span>
             </h2>
-            
+
             <div class="flex flex-col space-y-6">
-                <!-- Experience 1: Optum -->
+                <!-- Experience 1 -->
                 <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg animate-slide-up">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Value-Based Care Analytics Platform</h3>
-                        <h4 class="text-md font-semibold text-gray-800 dark:text-gray-300">Data Engineer, Optum (08/2024 – Present)</h4>
+                        <h3 class="text-xl font-bold mb-2">Data Engineer</h3>
+                        <h4 class="text-md font-semibold text-gray-800 dark:text-gray-300">Choice Hotels International | Fargo, ND (January 2026 - Present)</h4>
                         <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 my-4 text-sm space-y-2">
-                            <li>Developed and managed a healthcare analytics platform using <strong>AWS</strong> and <strong>Snowflake</strong> to process over 5 million records weekly.</li>
-                            <li>Engineered automated data quality validation layers with <b>Great Expectations</b> and <b>SQL</b> rules, reducing inaccuracies in regulatory reports by 30%.</li>
-                            <li>Designed <strong>PySpark</strong> batch and streaming jobs on <strong>AWS EMR</strong> and <strong>AWS Glue</strong> for near real-time HEDIS quality reporting.</li>
-                            <li>Migrated legacy analytics workloads from on-premise SQL Server to <b>Snowflake</b> and <b>AWS Redshift</b>, cutting infrastructure costs by 25%.</li>
-                            <li>Implemented <strong>Infrastructure-as-Code</strong> using <strong>Terraform</strong> and <strong>AWS CodePipeline</strong> for repeatable and secure environment provisioning.</li>
+                            <li>Orchestrating event-driven ETL pipelines using Python to load Medallia survey data into Amazon Redshift.</li>
+                            <li>Engineering AWS Lambda triggers.</li>
+                            <li>Managing Apache Airflow DAGs via AWS MWAA.</li>
                         </ul>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS S3</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS Glue</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS Redshift</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS EMR</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Python</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Redshift</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS Lambda</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-200">Snowflake</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">PySpark</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">SQL</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full dark:bg-yellow-900 dark:text-yellow-200">Terraform</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full dark:bg-pink-900 dark:text-pink-200">Great Expectations</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full dark:bg-purple-900 dark:text-purple-200">Power BI</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Apache Airflow</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">SQL</span>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Experience 2: TCS -->
+
+                <!-- Experience 2 -->
                 <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg animate-slide-up">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Azure & Databricks Cloud Data Lake</h3>
-                        <h4 class="text-md font-semibold text-gray-800 dark:text-gray-300">Data Engineer, TCS (01/2022 – 07/2023)</h4>
+                        <h3 class="text-xl font-bold mb-2">Data Engineer</h3>
+                        <h4 class="text-md font-semibold text-gray-800 dark:text-gray-300">Freddie Mac | New York, NY (August 2025 - December 2025)</h4>
                         <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 my-4 text-sm space-y-2">
-                            <li>Developed <strong>Azure Data Factory</strong> pipelines to ingest raw data into <strong>Azure Data Lake Storage Gen2</strong> and process it with scalable <strong>Databricks</strong> clusters.</li>
-                            <li>Implemented <b>Delta Lake</b> for ACID transactions and incremental data loads, reducing refresh times and improving performance by 50%.</li>
-                            <li>Applied <strong>Azure Key Vault</strong> and <strong>role-based access</strong> to secure sensitive customer data.</li>
-                            <li>Deployed infrastructure with <strong>Terraform</strong> and managed <strong>CI/CD</strong> with <strong>Azure DevOps</strong> for repeatable environment provisioning.</li>
-                            <li>Created <b>40+ Power BI dashboards</b> with live connections to <b>Azure Synapse</b> for operational and financial KPI monitoring.</li>
+                            <li>Migrating legacy FINRA trade-processing into a serverless pipeline using AWS Lambda and S3.</li>
+                            <li>Loading records into a PostgreSQL database.</li>
                         </ul>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Azure Data Factory</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Azure Databricks</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">Azure Synapse</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">ADLS Gen2</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full dark:bg-purple-900 dark:text-purple-200">Delta Lake</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">PySpark</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full dark:bg-yellow-900 dark:text-yellow-200">Terraform</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full dark:bg-pink-900 dark:text-pink-200">Azure DevOps</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full dark:bg-purple-900 dark:text-purple-200">Power BI</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS Lambda</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">S3</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">PostgreSQL</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS SNS</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full dark:bg-purple-900 dark:text-purple-200">AWS SQS</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">Python</span>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Experience 3: Corizo -->
+
+                <!-- Experience 3 -->
                 <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg animate-slide-up">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Data Pipelines for Analytics & AI</h3>
-                        <h4 class="text-md font-semibold text-gray-800 dark:text-gray-300">Data Engineer, Corizo (06/2020 – 12/2022)</h4>
+                        <h3 class="text-xl font-bold mb-2">Data & ML Engineer</h3>
+                        <h4 class="text-md font-semibold text-gray-800 dark:text-gray-300">Corizo | Remote, India (September 2022 - June 2023)</h4>
                         <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 my-4 text-sm space-y-2">
-                            <li>Built and maintained end-to-end data ingestion pipelines using <strong>Apache Airflow</strong> and <strong>Python</strong> for analytics and ML workflows.</li>
-                            <li>Modeled analytical datasets in <strong>Snowflake</strong> to support AI-driven recommendation engines and customer analytics.</li>
-                            <li>Implemented <b>CI/CD</b> automation using <b>GitHub Actions</b> and <b>Docker</b> for <strong>PySpark</strong> job deployments.</li>
-                            <li>Leveraged <strong>AWS Glue</strong> for metadata management and designed partitioning strategies to reduce <b>S3</b> storage costs by 30%.</li>
-                            <li>Collaborated with BI teams to deliver analytics-ready datasets for dashboards in <b>Tableau</b> and <b>Power BI</b>.</li>
+                            <li>Leading a customer segmentation engagement for Rathnadeep Supermarket using Python, SQL, and AWS.</li>
+                            <li>Applying K-Means and DBSCAN clustering.</li>
                         </ul>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full dark:bg-red-900 dark:text-red-200">Apache Airflow</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-200">Snowflake</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">PySpark</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">AWS S3</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full dark:bg-yellow-900 dark:text-yellow-200">Docker</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full dark:bg-pink-900 dark:text-pink-200">GitHub Actions</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full dark:bg-purple-900 dark:text-purple-200">Power BI</span>
-                            <span class="bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full dark:bg-teal-900 dark:text-teal-200">Tableau</span>
+                            <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full dark:bg-red-900 dark:text-red-200">Python</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-200">SQL</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full dark:bg-green-900 dark:text-green-200">AWS</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-200">K-Means</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full dark:bg-yellow-900 dark:text-yellow-200">DBSCAN</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full dark:bg-pink-900 dark:text-pink-200">Machine Learning</span>
                         </div>
                     </div>
                 </div>
@@ -362,13 +329,13 @@
             <h2 class="text-3xl font-bold text-center mb-16 animate-slide-up">
                 My <span class="text-primary dark:text-blue-400">Projects</span>
             </h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Dummy Project 1 -->
                 <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg animate-slide-up">
                     <div class="h-48 overflow-hidden">
-                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=Data+Dashboard" 
-                             alt="Dummy Project 1" 
+                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=Data+Dashboard"
+                             alt="Dummy Project 1"
                              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
@@ -388,12 +355,12 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Dummy Project 2 -->
                 <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg animate-slide-up" style="animation-delay: 0.2s;">
                     <div class="h-48 overflow-hidden">
-                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=ETL+Pipeline" 
-                             alt="Dummy Project 2" 
+                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=ETL+Pipeline"
+                             alt="Dummy Project 2"
                              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
@@ -413,12 +380,12 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Dummy Project 3 -->
                 <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg animate-slide-up" style="animation-delay: 0.4s;">
                     <div class="h-48 overflow-hidden">
-                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=AI+Chatbot" 
-                             alt="Dummy Project 3" 
+                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=AI+Chatbot"
+                             alt="Dummy Project 3"
                              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
@@ -439,7 +406,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12 animate-slide-up" style="animation-delay: 0.6s;">
                 <a href="https://github.com/koteswar-e" target="_blank" class="inline-flex items-center px-6 py-3 border border-primary text-primary dark:text-blue-400 dark:border-blue-400 rounded-lg hover:bg-primary/10 transition-colors">
                     <i class="fab fa-github mr-2"></i> View All Projects
@@ -456,7 +423,7 @@
             <h2 class="text-3xl font-bold text-center mb-16 animate-slide-up text-[#1E3A5F] dark:text-white">
                 My <span class="text-[#4B586F] dark:text-white">Skills</span>
             </h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <!-- Programming Languages -->
                 <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg animate-slide-up">
@@ -466,77 +433,74 @@
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Python</span>
                         <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">SQL</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">PySpark</span>
                         <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Java</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Scala</span>
                         <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">R</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">JavaScript</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">PL/SQL</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Shell Scripting</span>
                     </div>
                 </div>
 
-                <!-- Cloud & DevOps -->
+                <!-- Cloud & Infrastructure -->
                 <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg animate-slide-up" style="animation-delay: 0.2s;">
                     <h3 class="text-xl font-bold mb-6 text-[#1E3A5F] dark:text-white border-b-2 border-[#B0BEC5] dark:border-gray-700 pb-2">
-                        <i class="fas fa-cloud mr-2"></i> Cloud & DevOps
+                        <i class="fas fa-cloud mr-2"></i> Cloud & Infrastructure
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">AWS</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Azure</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">GCP</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Terraform</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Docker</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Kubernetes</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">GitHub Actions</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">GitLab CI/CD</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Azure DevOps</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">AWS Lambda</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">AWS Glue</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Kinesis</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">S3</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Redshift</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">SNS</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">SQS</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">CloudWatch</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Secrets Manager</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">IAM</span>
                     </div>
                 </div>
 
-                <!-- Database & Data Tools -->
+                <!-- Data Engineering & Orchestration -->
                 <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg animate-slide-up" style="animation-delay: 0.4s;">
                     <h3 class="text-xl font-bold mb-6 text-[#1E3A5F] dark:text-white border-b-2 border-[#B0BEC5] dark:border-gray-700 pb-2">
-                        <i class="fas fa-database mr-2"></i> Database & Data Tools
+                        <i class="fas fa-database mr-2"></i> Data Engineering & Orchestration
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Snowflake</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">ETL/ELT pipelines</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">dbt</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">SFTP ingestion</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">REST API</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">PostgreSQL</span>
                         <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Amazon Redshift</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Apache Spark</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Apache Airflow</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Power BI</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Tableau</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Databricks</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Delta Lake</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Confluence</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Great Expectations</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">MySQL</span>
                     </div>
                 </div>
 
-                <!-- AI/ML & MLOps -->
+                <!-- Analytics & Machine Learning -->
                 <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg animate-slide-up" style="animation-delay: 0.6s;">
                     <h3 class="text-xl font-bold mb-6 text-[#1E3A5F] dark:text-white border-b-2 border-[#B0BEC5] dark:border-gray-700 pb-2">
-                        <i class="fas fa-brain mr-2"></i> AI/ML & MLOps
+                        <i class="fas fa-brain mr-2"></i> Analytics & Machine Learning
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">TensorFlow</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">PyTorch</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">MLflow</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">AWS SageMaker</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Flask</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">BERT</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Hugging Face Transformers</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Pandas</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">NumPy</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">scikit-learn</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">K-Means</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">DBSCAN</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Tableau</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Power BI</span>
                     </div>
                 </div>
 
-                <!-- Agile & Methodologies -->
+                <!-- Data Quality & Operations -->
                 <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg animate-slide-up" style="animation-delay: 0.8s;">
                     <h3 class="text-xl font-bold mb-6 text-[#1E3A5F] dark:text-white border-b-2 border-[#B0BEC5] dark:border-gray-700 pb-2">
-                        <i class="fas fa-project-diagram mr-2"></i> Agile & Methodologies
+                        <i class="fas fa-project-diagram mr-2"></i> Data Quality & Operations
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Agile (Scrum)</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Great Expectations</span>
                         <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">CI/CD</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">DevOps</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Git/GitHub</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Agile/Scrum</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full dark:bg-gray-800 dark:text-white">Jira</span>
                     </div>
                 </div>
             </div>
@@ -551,16 +515,16 @@
             <h2 class="text-3xl font-bold text-center mb-16 animate-slide-up">
                 Get In <span class="text-primary dark:text-blue-400">Touch</span>
             </h2>
-            
+
             <div class="flex flex-col md:flex-row gap-12">
                 <div class="md:w-1/2 animate-slide-up">
                     <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
                     <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">
-                        Feel free to reach out if you're looking for a Data Engineer, AI Engineer, or have a question.  
-                        
+                        Feel free to reach out if you're looking for a Data Engineer, AI Engineer, or have a question.
+
                         Or if you just wanna play CHESS!
                     </p>
-                    
+
                     <div class="space-y-6">
                         <div class="flex items-start">
                             <div class="bg-primary/10 dark:bg-[#4B586F]/10 p-3 rounded-full mr-4 text-primary dark:text-[#4B586F]">
@@ -568,31 +532,31 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold">Email</h4>
-                                <a href="mailto:ekoteswar.2k@gmail.com" class="text-gray-600 dark:text-gray-300 hover:underline">ekoteswar.2k@gmail.com</a>
+                                <a href="mailto:koteswar2k@gmail.com" class="text-gray-600 dark:text-gray-300 hover:underline">koteswar2k@gmail.com</a>
                             </div>
                         </div>
-                        
+
                         <div class="flex items-start">
                             <div class="bg-primary/10 dark:bg-blue-400/10 p-3 rounded-full mr-4 text-primary dark:text-blue-400">
                                 <i class="fas fa-phone text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="font-semibold">Phone</h4>
-                                <a href="tel:+14753757286" class="text-gray-600 dark:text-gray-300 hover:underline">+1 (475) 375-7286</a>
+                                <a href="tel:+14753757286" class="text-gray-600 dark:text-gray-300 hover:underline">475 375 7286</a>
                             </div>
                         </div>
-                        
+
                         <div class="flex items-start">
                             <div class="bg-primary/10 dark:bg-blue-400/10 p-3 rounded-full mr-4 text-primary dark:text-blue-400">
                                 <i class="fas fa-map-marker-alt text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="font-semibold">Location</h4>
-                                <p class="text-gray-600 dark:text-gray-300">New Haven, CT</p>
+                                <p class="text-gray-600 dark:text-gray-300">Grand Forks, ND 06519</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mt-8">
                         <h4 class="font-semibold mb-4">Follow Me</h4>
                         <div class="flex space-x-4">
@@ -605,29 +569,29 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="md:w-1/2 animate-slide-up" style="animation-delay: 0.2s;">
                     <form id="contact-form" action="https://formspree.io/f/xovnpbqr" method="POST" class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg">
                         <div class="mb-6">
                             <label for="name" class="block font-medium mb-2">Name</label>
                             <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-600 dark:text-white" required>
                         </div>
-                        
+
                         <div class="mb-6">
                             <label for="email" class="block font-medium mb-2">Email</label>
                             <input type="email" id="email" name="_replyto" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-600 dark:text-white" required>
                         </div>
-                        
+
                         <div class="mb-6">
                             <label for="subject" class="block font-medium mb-2">Subject</label>
                             <input type="text" id="subject" name="_subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-600 dark:text-white" required>
                         </div>
-                        
+
                         <div class="mb-6">
                             <label for="message" class="block font-medium mb-2">Message</label>
                             <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-600 dark:text-white" required></textarea>
                         </div>
-                        
+
                         <div class="mb-6">
                             <!-- This div is for the reCAPTCHA, which is handled by Formspree automatically -->
                         </div>
@@ -649,7 +613,7 @@
                     <a href="#home" class="text-2xl font-bold text-gray-200 dark:text-white">KOTESWAR ENAMADNI</a>
                     <p class="mt-2 text-gray-400">Building digital experiences that matter.</p>
                 </div>
-                
+
                 <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0 hidden">
                     <div>
                         <h4 class="font-semibold mb-3">Quick Links</h4>
@@ -662,7 +626,7 @@
                             <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                         </ul>
                     </div>
-                    
+
                     <div>
                         <h4 class="font-semibold mb-3">Connect</h4>
                         <ul class="space-y-2">
@@ -672,7 +636,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
                 <p>&copy; 2024 Koteswar Enamadni. All rights reserved.</p>
             </div>
@@ -691,24 +655,24 @@
         // Custom cursor
         const cursor = document.querySelector('.cursor');
         const cursorFollower = document.querySelector('.cursor-follower');
-        
+
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
-            
+
             setTimeout(() => {
                 cursorFollower.style.left = e.clientX + 'px';
                 cursorFollower.style.top = e.clientY + 'px';
             }, 100);
         });
-        
+
         // Add active state on clickable elements
         document.querySelectorAll('a, button, input, .project-card').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.classList.add('active');
                 cursorFollower.classList.add('active');
             });
-            
+
             el.addEventListener('mouseleave', () => {
                 cursor.classList.remove('active');
                 cursor.classList.remove('active');
@@ -718,35 +682,35 @@
         // Theme toggle
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
-        
+
         // Check for saved theme preference or use preferred color scheme
         if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             html.classList.add('dark');
         }
-        
+
         themeToggle.addEventListener('click', () => {
             html.classList.toggle('dark');
             localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
         });
-        
+
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-        
+
         // Close mobile menu when clicking on a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
-        
+
         // Back to top button
         const backToTopButton = document.getElementById('back-to-top');
-        
+
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.remove('opacity-0', 'invisible');
@@ -756,38 +720,38 @@
                 backToTopButton.classList.add('opacity-0', 'invisible');
             }
         });
-        
+
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        
+
         // Animation on scroll
         const animateOnScroll = () => {
             const elements = document.querySelectorAll('.animate-slide-up, .animate-fade-in');
-            
+
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.3;
-                
+
                 if (elementPosition < screenPosition) {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
                 }
             });
         };
-        
+
         // Set initial state for animated elements
         document.querySelectorAll('.animate-slide-up').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         });
-        
+
         document.querySelectorAll('.animate-fade-in').forEach(el => {
             el.style.opacity = '0';
             el.style.transition = 'opacity 1s ease';
         });
-        
+
         window.addEventListener('load', animateOnScroll);
         window.addEventListener('scroll', animateOnScroll);
     </script>
